@@ -8,6 +8,9 @@ client/node_modules/
 .env.development.local
 .env.test.local
 .env.production.local
+.env-groq.example
+.env-example
+.env-openai.example
 
 # Production builds
 client/build/

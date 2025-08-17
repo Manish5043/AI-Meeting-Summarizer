@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
 function App() {
   const [text, setText] = useState('');
   const [customPrompt, setCustomPrompt] = useState('');
@@ -26,7 +28,7 @@ function App() {
     setSuccess('');
 
     try {
-      const response = await axios.post('/api/summarize', {
+      const response = await axios.post(`${API_BASE_URL}/api/summarize`, {
         text: text.trim(),
         customPrompt: customPrompt.trim() || undefined
       });
@@ -51,7 +53,7 @@ function App() {
     setSuccess('');
 
     try {
-      await axios.put(`/api/summaries/${summary.id}`, {
+      await axios.put(`${API_BASE_URL}/api/summaries/${summary.id}`, {
         editedSummary: editedSummary.trim()
       });
 
@@ -89,7 +91,7 @@ function App() {
     setSuccess('');
 
     try {
-      await axios.post('/api/send-email', {
+      await axios.post(`${API_BASE_URL}/api/send-email`, {
         recipientEmails,
         subject: emailSubject,
         summary: editedSummary.trim()

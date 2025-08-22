@@ -11,6 +11,7 @@ A full-stack AI-powered meeting notes summarizer and sharer built with the MERN 
 - **MongoDB Storage**: Persistent storage of all summaries and user data
 - **Responsive Design**: Clean, modern UI that works on all devices
 
+
 ## Tech Stack
 
 ### Backend
